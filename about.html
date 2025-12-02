@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Norvalian - About</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
+
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">DAVEVLN</h1>
+            <div class="menu-toggle" id="menuToggle"> 
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav" id="mainNav"> 
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="about" class="about page-content">
+        <div class="container">
+            <div class="about-left">
+                <img src="about-bg.jpg" alt="Man on the mountain" class="about-bg-img">
+            </div>
+            <div class="about-right">
+                <div class="about-main">
+                    <h2>About</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+                <div class="hire-me">
+                    <h3>Hire me</h3>
+                    <p>I'm open for collaborations. I can made for you great web designs, clean coding and much more. Just reach out and shoot me a message.</p>
+                    <a href="contact.html" class="link-more">- Hire me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', function() {
+            // Mengganti kelas 'open' pada navigasi
+            mainNav.classList.toggle('open');
+            
+            // Mengganti ikon burger menjadi ikon X (tutup)
+            const icon = menuToggle.querySelector('i');
+            if (mainNav.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times'); // Ikon X
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars'); // Ikon Burger
+            }
+        });
+        
+        // Opsional: Tutup menu jika link diklik
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                // Gunakan 992px sebagai breakpoint (sesuai CSS Anda)
+                if (window.innerWidth <= 992) {
+                    mainNav.classList.remove('open');
+                    
+                    // Mengembalikan ikon ke burger
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

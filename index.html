@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Norvalian - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+    <div class="container">
+        <h1 class="logo">DAVEVLN</h1>
+        <div class="menu-toggle" id="menuToggle"> 
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav class="nav" id="mainNav"> 
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+</header>
+
+    <section id="home" class="hero page-full">
+        <div class="hero-content">
+            <h2 class="name">David Norvalian Perdana</h2>
+            <p class="title">Personal Portfolio</p>
+            <div class="hero-actions">
+                <a href="portfolio.html" class="btn btn-primary">Portfolio</a>
+                <a href="contact.html" class="btn btn-secondary">Contact me</a>
+            </div>
+        </div>
+        <div class="hero-image-overlay">
+            <img src="profile.jpg" alt="John Doe" class="hero-profile-img">
+        </div>
+        <div class="social-links">
+    <a href="https://www.instagram.com/davevln/" title="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/davevln" title="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+    <a href="URL_LINKEDIN_ANDA" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://wa.me/6285218512728" title="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </section>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        menuToggle.addEventListener('click', function() {
+            // Mengganti kelas 'open' pada navigasi
+            mainNav.classList.toggle('open');
+            
+            // Mengganti ikon burger menjadi ikon X (tutup)
+            const icon = menuToggle.querySelector('i');
+            if (mainNav.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times'); // Ikon X
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars'); // Ikon Burger
+            }
+        });
+        
+        // Opsional: Tutup menu jika link diklik
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 992) {
+                    mainNav.classList.remove('open');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
