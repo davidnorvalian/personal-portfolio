@@ -13,7 +13,7 @@
     --bg-light: #222222;
     --text-light: #f0f0f0;
     --text-muted: #aaa;
-    --accent-color: #f0f0f0; /* Default: Putih */
+    --accent-color: #f0f0f0; 
     --whatsapp-green: #25d366;
     --whatsapp-dark: #128c7e;
 }
@@ -44,7 +44,7 @@ h2 {
     font-weight: 600;
 }
 
-/* Penyesuaian Halaman (Multi-page support) */
+/* Page Content Padding (Penting untuk Multi-Page) */
 .page-content {
     padding-top: 120px !important;
     padding-bottom: 50px;
@@ -88,7 +88,6 @@ h2 {
     display: inline-block;
 }
 
-
 /* ================================== */
 /* 2. HEADER / NAVIGATION             */
 /* ================================== */
@@ -130,7 +129,6 @@ h2 {
     padding-bottom: 5px;
 }
 
-/* Burger Toggle (Desktop: Hidden) */
 .menu-toggle {
     display: none;
     font-size: 1.5em;
@@ -139,7 +137,7 @@ h2 {
 }
 
 /* ================================== */
-/* 3. HERO SECTION                    */
+/* 3. HERO SECTION (index.html only)  */
 /* ================================== */
 
 .hero {
@@ -147,7 +145,7 @@ h2 {
     display: flex;
     position: relative;
     overflow: hidden;
-    min-height: 100vh; /* Pastikan tinggi cukup untuk desktop */
+    min-height: 100vh;
 }
 
 .hero-content {
@@ -205,7 +203,6 @@ h2 {
     color: var(--accent-color);
 }
 
-
 /* ================================== */
 /* 4. ABOUT SECTION                   */
 /* ================================== */
@@ -253,7 +250,6 @@ h2 {
     border-left: 3px solid var(--accent-color);
 }
 
-
 /* ================================== */
 /* 5. SERVICES SECTION                */
 /* ================================== */
@@ -286,6 +282,13 @@ h2 {
     transform: translateY(-5px);
 }
 
+/* Styling Highlight (Merah) */
+.service-card .highlight-red {
+    color: #FF4500;
+    font-weight: 700;
+}
+
+/* Styling Rating Tag */
 .card-rating {
     position: absolute;
     top: 30px;
@@ -297,6 +300,27 @@ h2 {
     text-transform: uppercase;
 }
 
+/* Styling Deskripsi (Putih) */
+.service-card .card-text {
+    color: var(--text-light); 
+    margin-bottom: 10px;
+}
+
+/* Styling Acuan/Skills Tag (Bawah) */
+.card-skills {
+    position: static; 
+    display: inline-block; 
+    font-size: 0.7em; 
+    background-color: #444; /* Tag Style */
+    padding: 3px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-style: normal;
+    color: var(--text-light); 
+    margin-top: 15px;
+    border-top: none; 
+    padding-top: 3px; 
+}
 
 /* ================================== */
 /* 6. PORTFOLIO SECTION               */
@@ -319,23 +343,13 @@ h2 {
     padding: 5px 0;
     color: #777;
     text-transform: uppercase;
-    transition: color 0.3s ease, border-bottom-color 0.3s ease, opacity 0.1s, transform 0.1s;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
     cursor: pointer;
 }
 
-.portfolio-nav a:hover {
-    color: var(--accent-color);
-}
-
-.portfolio-nav a.active {
+.portfolio-nav a:hover, .portfolio-nav a.active {
     color: var(--accent-color);
     border-bottom: 2px solid var(--accent-color);
-}
-
-.portfolio-nav a:active {
-    color: #fff;
-    opacity: 0.8;
-    transform: translateY(1px);
 }
 
 .portfolio-grid {
@@ -349,10 +363,10 @@ h2 {
     background-color: var(--bg-dark);
     border-radius: 5px;
     overflow: hidden;
-    color: inherit; /* Penting untuk tautan */
-    text-decoration: none; /* Penting untuk tautan */
+    color: inherit; 
+    text-decoration: none; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, opacity 0.3s;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
     cursor: pointer;
 }
 
@@ -362,21 +376,32 @@ h2 {
     opacity: 0.95;
 }
 
-.project-card:active {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    opacity: 1;
-}
-
 .project-img {
     width: 100%;
     height: 250px;
     object-fit: cover;
 }
 
+.project-info {
+    padding: 20px;
+}
+
+.project-info h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--accent-color);
+}
+
+.project-category {
+    font-size: 0.8em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    display: block;
+}
 
 /* ================================== */
-/* 7. CONTACT SECTION STYLING         */
+/* 7. CONTACT SECTION                 */
 /* ================================== */
 
 .contact {
@@ -398,12 +423,6 @@ h2 {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.whatsapp-cta p {
-    font-size: 0.9em;
-    color: var(--text-muted);
-    margin-bottom: 15px;
-}
-
 .btn-whatsapp {
     background-color: var(--whatsapp-green);
     color: white;
@@ -413,14 +432,8 @@ h2 {
     border-radius: 5px;
     display: inline-block;
 }
-
-.btn-whatsapp i {
-    margin-right: 8px;
-}
-
 .btn-whatsapp:hover {
     background-color: var(--whatsapp-dark);
-    color: white;
 }
 
 .contact-divider {
@@ -428,10 +441,8 @@ h2 {
     margin: 20px auto;
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.9em;
     position: relative;
 }
-
 .contact-divider p {
     display: inline-block;
     background-color: var(--bg-dark);
@@ -439,7 +450,6 @@ h2 {
     z-index: 5;
     position: relative;
 }
-
 .contact-divider::before {
     content: '';
     position: absolute;
@@ -453,80 +463,54 @@ h2 {
 
 .contact-form {
     max-width: 600px;
-    margin: 0 auto; /* Tengah */
+    margin: 0 auto;
     padding: 30px;
     background-color: var(--bg-light);
     border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    font-size: 0.9em;
-    color: var(--accent-color);
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; color: var(--accent-color); }
+.contact-form input, .contact-form textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #333;
     border-radius: 4px;
     background-color: #2a2a2a;
     color: var(--text-light);
-    font-size: 1em;
-    transition: border-color 0.3s;
 }
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--accent-color);
-    outline: none;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form .btn-secondary {
-    width: 100%;
-    padding: 15px;
-    margin-top: 10px;
-}
-
+.contact-form .btn-secondary { width: 100%; }
 
 /* ================================== */
 /* 8. MEDIA QUERIES (RESPONSIVENESS)  */
 /* ================================== */
 
-/* --- LAYAR TABLET (Maksimum 992px) --- */
 @media (max-width: 992px) {
-
-    /* Global */
-    .page-content {
-        padding-top: 100px !important;
-    }
-    h2 {
-        font-size: 1.8em;
-    }
-
-    /* HEADER / NAVIGATION (Burger Menu) */
+    /* HEADER: Flex layout untuk Logo dan Burger */
     .header .container {
         flex-direction: row;
         justify-content: space-between;
+        padding: 20px 15px;
+        position: relative; /* Penting untuk absolute positioning logo */
     }
 
+    /* LOGO: Center Absolute */
+    .header .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1000;
+        margin: 0;
+    }
+
+    /* BURGER: Tampil di Kanan */
     .menu-toggle {
-        display: block; /* Tampilkan ikon Burger */
+        display: block;
+        position: relative;
+        z-index: 1001; /* Di atas logo */
     }
 
+    /* NAVIGASI: Fullscreen Menu */
     .nav {
         position: fixed;
         top: 0;
@@ -534,143 +518,57 @@ h2 {
         width: 100%;
         height: 100%;
         background-color: var(--bg-dark);
-        z-index: 1000;
+        z-index: 999;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /* Sembunyikan secara default, muncul dari kanan */
-        transform: translateX(100%);
+        transform: translateX(100%); /* Sembunyi ke kanan */
         transition: transform 0.3s ease-out;
     }
+    .nav.open { transform: translateX(0); }
+    .nav a { margin: 20px 0; font-size: 1.5em; margin-left: 0; }
 
-    .nav.open {
-        transform: translateX(0);
-    }
-
-    .nav a {
-        margin: 20px 0;
-        font-size: 1.5em;
-        margin-left: 0; /* Hapus margin kiri desktop */
-    }
-
-    /* HERO Section (Mobile Background Image Setup) */
+    /* HERO: Mobile Layout */
     .hero {
         flex-direction: column;
         padding-top: 100px;
         min-height: 80vh;
-        /* Gambar Latar Belakang */
-        background-image: url('profile.jpg');
+        background-image: url('profile.jpg'); /* Ganti path gambar */
         background-size: cover;
         background-position: center top;
-        background-repeat: no-repeat;
         position: relative;
     }
-
-    /* Overlay Gelap */
-    .hero::before {
+    .hero::before { /* Overlay gelap */
         content: '';
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 0; left: 0; width: 100%; height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
         z-index: 1;
     }
-
     .hero-content {
         width: 100%;
-        padding-left: 15px;
+        padding: 0 15px;
         text-align: center;
-        padding-top: 0;
-        margin-bottom: 20px;
         position: relative;
         z-index: 2;
-        color: var(--text-light);
     }
-
-    .name, .title {
-        color: var(--text-light);
-    }
-    .name {
-        font-size: 3em;
-    }
-
-    /* Sembunyikan elemen gambar individual */
-    .hero-image-overlay {
-        display: none;
-    }
-
-    /* Social links di tengah bawah */
+    .hero-image-overlay { display: none; }
     .social-links {
-        flex-direction: row;
-        position: static;
-        width: 100%;
-        justify-content: center;
-        padding: 20px 0;
-        gap: 25px;
-        position: relative;
-        z-index: 2;
-    }
-    
-    /* ABOUT Section */
-    .about .container {
-        flex-direction: column;
-        gap: 40px;
+        position: relative; z-index: 2;
+        flex-direction: row; width: 100%;
+        justify-content: center; padding: 20px 0;
     }
 
-    .about-left, .about-right {
-        width: 100%;
-    }
-
-    .about-right {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    /* SERVICES Section */
-    .services .container {
-        grid-template-columns: 1fr;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    /* PORTFOLIO Section */
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .project-img {
-        height: 200px;
-    }
+    /* LAYOUT LAIN */
+    .about .container { flex-direction: column; }
+    .about-left, .about-right { width: 100%; }
+    .services .container, .services-grid { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: 1fr; }
 }
 
-/* --- LAYAR MOBILE KECIL (Maksimum 576px) --- */
 @media (max-width: 576px) {
-
-    /* HERO */
-    .name {
-        font-size: 2.5em;
-    }
-    .title {
-        font-size: 1em;
-    }
-
-    /* Button Action (Contoh: tombol di Home) */
-    .hero-actions {
-        flex-direction: column;
-    }
-    .btn {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    /* ABOUT */
-    .hire-me {
-        padding: 20px;
-    }
+    .name { font-size: 2.5em; }
+    .hero-actions { flex-direction: column; }
+    .btn { width: 100%; margin-bottom: 10px; }
 }

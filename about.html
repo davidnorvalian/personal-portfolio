@@ -6,9 +6,7 @@
     <title>David Norvalian - About</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -31,57 +29,50 @@
     <section id="about" class="about page-content">
         <div class="container">
             <div class="about-left">
-                <img src="about-bg.jpg" alt="Man on the mountain" class="about-bg-img">
+                <img src="about-bg.jpg" alt="Profil Profesional" class="about-bg-img">
             </div>
+
             <div class="about-right">
                 <div class="about-main">
-                    <h2>About</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <h2>Lebih Dari Sekadar Angka, Ini Tentang Solusi.</h2>
+                    <p>
+                        Saya adalah seorang profesional yang berdedikasi untuk mengubah ide kreatif menjadi produk digital yang fungsional dan berdampak nyata. Dalam setiap proyek, fokus saya bukan hanya pada eksekusi teknis, tetapi juga pada <strong>pemahaman mendalam terhadap tujuan bisnis Anda</strong>.
+                    </p>
+                    <p>
+                        Saya percaya bahwa inovasi sejati lahir dari sinergi antara kemampuan teknis yang solid dan komunikasi yang transparan. Sebagai mitra Anda, saya berkomitmen untuk menghadirkan proyek tepat waktu, sesuai anggaran, dan yang terpenting, <strong>melampaui ekspektasi Anda</strong>.
+                    </p>
+                    <a href="contact.html" class="link-more">Mari Berkolaborasi &rarr;</a>
                 </div>
+
                 <div class="hire-me">
-                    <h3>Hire me</h3>
-                    <p>I'm open for collaborations. I can made for you great web designs, clean coding and much more. Just reach out and shoot me a message.</p>
-                    <a href="contact.html" class="link-more">- Hire me</a>
+                    <h3 style="color: var(--accent-color); margin-bottom: 15px;">Mengapa Memilih Saya?</h3>
+                    <ul style="list-style-type: none; padding-left: 0; font-size: 0.9em;">
+                        <li style="margin-bottom: 10px;">
+                            <span style="color: #FF4500; font-weight: 700;">&#10003; Fokus Hasil:</span> Setiap pekerjaan diukur berdasarkan dampak dan ROI.
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <span style="color: #FF4500; font-weight: 700;">&#10003; Komunikasi Jelas:</span> Update rutin dan dokumentasi yang mudah dipahami.
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <span style="color: #FF4500; font-weight: 700;">&#10003; Keandalan Teknis:</span> Komitmen terhadap kualitas dan kecepatan.
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
 
-        menuToggle.addEventListener('click', function() {
-            // Mengganti kelas 'open' pada navigasi
-            mainNav.classList.toggle('open');
-            
-            // Mengganti ikon burger menjadi ikon X (tutup)
-            const icon = menuToggle.querySelector('i');
-            if (mainNav.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times'); // Ikon X
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars'); // Ikon Burger
-            }
-        });
-        
-        // Opsional: Tutup menu jika link diklik
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                // Gunakan 992px sebagai breakpoint (sesuai CSS Anda)
-                if (window.innerWidth <= 992) {
-                    mainNav.classList.remove('open');
-                    
-                    // Mengembalikan ikon ke burger
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('open');
+                const icon = menuToggle.querySelector('i');
+                icon.className = mainNav.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
             });
         });
-    });
-</script>
+    </script>
 </body>
 </html>

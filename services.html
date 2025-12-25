@@ -6,7 +6,6 @@
     <title>David Norvalian - Services</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -14,11 +13,9 @@
     <header class="header">
         <div class="container">
             <h1 class="logo">DAVEVLN</h1>
-            
             <div class="menu-toggle" id="menuToggle"> 
                 <i class="fas fa-bars"></i>
             </div>
-            
             <nav class="nav" id="mainNav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -33,72 +30,53 @@
         <div class="container">
             <div class="services-header">
                 <h2>Services</h2>
-                <p>Here it's my services that can I do, my skills and my experience.</p>
+                <p>Layanan profesional yang saya tawarkan, disesuaikan dengan kebutuhan Anda.</p>
                 <a href="contact.html" class="link-more">- Hire me</a>
             </div>
             <div class="services-grid">
+                <!-- Card 1 -->
                 <div class="service-card">
                     <h4 class="card-title">Event Sponsorship</h4>
-                    <span class="card-rating">very good</span>
-                    <p class="card-text">Berpengalaman dalam mengidentifikasi, menjalin, dan mengelola kemitraan strategis dengan sponsor untuk acara skala besar, memastikan pencapaian target visibilitas merek dan return on investment (ROI). Terampil dalam negosiasi kontrak dan aktivasi branding di lokasi.</p>
-                    <p class="card-skills">Garmin Run 2024-2025, Planet Sport Run 2024</p>
+                    <span class="card-rating highlight-red">very good</span>
+                    <p class="card-text">Berpengalaman dalam mengidentifikasi, menjalin, dan mengelola kemitraan strategis dengan sponsor untuk acara skala besar, memastikan pencapaian target visibilitas merek dan ROI.</p>
+                    <span class="card-skills reference-black">Garmin Run 2024-2025, Planet Sport Run 2024</span>
                 </div>
+                <!-- Card 2 -->
                 <div class="service-card">
                     <h4 class="card-title">Retail Management</h4>
-                    <span class="card-rating">very good</span>
-                    <p class="card-text">Keahlian dalam mengawasi operasional harian toko ritel, termasuk manajemen stok, display produk, merchandising, pelatihan staf, dan strategi penjualan untuk memaksimalkan profitabilitas dan meningkatkan pengalaman pelanggan.</p>
-                    <p class="card-skills">Bros Vape Bogor, Vapestore D8, Chick&Whizz, MoreVapor</p>
+                    <span class="card-rating highlight-red">very good</span>
+                    <p class="card-text">Keahlian dalam mengawasi operasional harian toko ritel, termasuk manajemen stok, display produk, merchandising, dan strategi penjualan untuk memaksimalkan profitabilitas.</p>
+                    <span class="card-skills reference-black">Bros Vape Bogor, Vapestore D8, Chick&Whizz</span>
                 </div>
+                <!-- Card 3 -->
                 <div class="service-card">
                     <h4 class="card-title">Data Entry</h4>
-                    <span class="card-rating">good</span>
-                    <p class="card-text">Mampu memasukkan, memverifikasi, dan mengelola data dalam jumlah besar dengan akurasi dan kecepatan tinggi. Familiar dengan berbagai software basis data dan spreadsheet, serta menjaga kerahasiaan dan integritas data.</p>
-                    <p class="card-skills">Freelance</p>
+                    <span class="card-rating highlight-red">good</span>
+                    <p class="card-text">Mampu memasukkan, memverifikasi, dan mengelola data dalam jumlah besar dengan akurasi dan kecepatan tinggi. Familiar dengan berbagai software basis data.</p>
+                    <span class="card-skills reference-black">Freelance Projects</span>
                 </div>
+                <!-- Card 4 -->
                 <div class="service-card">
                     <h4 class="card-title">Team Management</h4>
-                    <span class="card-rating">good</span>
-                    <p class="card-text">Efektif dalam memimpin, memotivasi, dan mengarahkan tim untuk mencapai tujuan organisasi. Terampil dalam delegasi tugas, penyelesaian konflik, coaching, dan evaluasi kinerja tim.</p>
-                    <p class="card-skills">D&D Sport Management</p>
+                    <span class="card-rating highlight-red">good</span>
+                    <p class="card-text">Efektif dalam memimpin, memotivasi, dan mengarahkan tim untuk mencapai tujuan organisasi. Terampil dalam delegasi tugas dan penyelesaian konflik.</p>
+                    <span class="card-skills reference-black">D&D Sport Management</span>
                 </div>
             </div>
         </div>
     </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
 
-        menuToggle.addEventListener('click', function() {
-            // Mengganti kelas 'open' pada navigasi
-            mainNav.classList.toggle('open');
-            
-            // Mengganti ikon burger menjadi ikon X (tutup)
-            const icon = menuToggle.querySelector('i');
-            if (mainNav.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times'); // Ikon X
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars'); // Ikon Burger
-            }
-        });
-        
-        // Opsional: Tutup menu jika link diklik
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 992) {
-                    mainNav.classList.remove('open');
-                    
-                    // Mengembalikan ikon ke burger
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('open');
+                const icon = menuToggle.querySelector('i');
+                icon.className = mainNav.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
             });
         });
-    });
-</script>
+    </script>
 </body>
 </html>

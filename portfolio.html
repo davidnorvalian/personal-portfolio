@@ -6,156 +6,121 @@
     <title>David Norvalian - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .project-card { transition: transform 0.4s ease, opacity 0.4s ease; }
+        .project-card.fade-out { opacity: 0; transform: scale(0.95); display: none; }
+        .portfolio-grid { min-height: 400px; }
+    </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="container">
-        <h1 class="logo">DAVEVLN</h1>
-        <div class="menu-toggle" id="menuToggle"> 
-            <i class="fas fa-bars"></i>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">DAVEVLN</h1>
+            <div class="menu-toggle" id="menuToggle"> 
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav" id="mainNav"> 
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </nav>
         </div>
-        <nav class="nav" id="mainNav"> 
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="portfolio.html" class="active">Portfolio</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </div>
-</header>
+    </header>
 
-<section id="portfolio" class="portfolio page-content">
-    <div class="container">
-        <h2>My Works</h2>
-        <p class="portfolio-subtitle">These are all of my projects that I have worked on so far</p>
+    <section id="portfolio" class="portfolio page-content">
+        <div class="container">
+            <h2>My Works</h2>
+            <p class="portfolio-subtitle">Proyek terpilih berdasarkan kategori keahlian.</p>
 
-        <div class="portfolio-nav">
-            <a href="#" class="active filterable-link" data-filter="all">All</a>
-            <a href="#" class="filterable-link" data-filter="web-design">Web Design</a>
-            <a href="#" class="filterable-link" data-filter="front-end">Front-end Dev</a>
-            <a href="#" class="filterable-link" data-filter="branding">Branding</a>
+            <!-- Navigasi Filter -->
+            <div class="portfolio-nav">
+                <a href="#" class="active filterable-link" data-filter="all">All</a>
+                <a href="#" class="filterable-link" data-filter="web-design">Web Design</a>
+                <a href="#" class="filterable-link" data-filter="front-end">Front-end</a>
+                <a href="#" class="filterable-link" data-filter="branding">Branding</a>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- PROYEK 1 -->
+                <a href="#" class="project-card" data-category="web-design front-end">
+                    <img src="project-ecom.jpg" alt="E-Commerce Platform" class="project-img">
+                    <div class="project-info">
+                        <h4>AstroMart E-Commerce</h4> 
+                        <span class="project-category">Web Design & Dev</span>
+                    </div>
+                </a>
+                <!-- PROYEK 2 -->
+                <a href="#" class="project-card" data-category="front-end">
+                    <img src="project-landing.jpg" alt="SaaS Landing Page" class="project-img">
+                    <div class="project-info">
+                        <h4>Zenith Landing Page</h4>
+                        <span class="project-category">Front-end React</span>
+                    </div>
+                </a>
+                <!-- PROYEK 3 -->
+                <a href="#" class="project-card" data-category="branding">
+                    <img src="project-branding.jpg" alt="Creative Branding" class="project-img">
+                    <div class="project-info">
+                        <h4>Aether Studio Branding</h4>
+                        <span class="project-category">Digital Branding</span>
+                    </div>
+                </a>
+                <!-- PROYEK 4 -->
+                <a href="#" class="project-card" data-category="web-design front-end">
+                    <img src="project-dashboard.jpg" alt="Dashboard" class="project-img">
+                    <div class="project-info">
+                        <h4>Management Dashboard</h4>
+                        <span class="project-category">UI/UX & HTML</span>
+                    </div>
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="portfolio-grid">
-
-            <a href="#" class="project-card" data-category="web-design front-end" target="_blank" rel="noopener noreferrer">
-                <img src="project-ecom.jpg" alt="E-Commerce Platform Redesign" class="project-img">
-                <div class="project-info">
-                    <h4>AstroMart E-Commerce Platform</h4> 
-                    <span class="project-category">Web Design & Development</span>
-                </div>
-            </a>
-
-            <a href="#" class="project-card" data-category="front-end" target="_blank" rel="noopener noreferrer">
-                <img src="project-landing.jpg" alt="SaaS Landing Page" class="project-img">
-                <div class="project-info">
-                    <h4>Zenith Software Landing Page</h4>
-                    <span class="project-category">Front-end Development (React)</span>
-                </div>
-            </a>
-
-            <a href="#" class="project-card" data-category="branding" target="_blank" rel="noopener noreferrer">
-                <img src="project-branding.jpg" alt="Logo dan Branding Studio Kreatif" class="project-img">
-                <div class="project-info">
-                    <h4>Aether Creative Studio Branding</h4>
-                    <span class="project-category">Digital Design & Branding</span>
-                </div>
-            </a>
-
-            <a href="#" class="project-card" data-category="web-design front-end" target="_blank" rel="noopener noreferrer">
-                <img src="project-dashboard.jpg" alt="Dashboard Aplikasi Manajemen Proyek" class="project-img">
-                <div class="project-info">
-                    <h4>Internal Project Management Dashboard</h4>
-                    <span class="project-category">UI/UX Design & HTML/CSS</span>
-                </div>
-            </a>
-
-        </div>
-    </div>
-</section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-        const filterLinks = document.querySelectorAll('.filterable-link');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        // ===================================
-        // A. FUNGSI BURGER MENU
-        // ===================================
-        menuToggle.addEventListener('click', function() {
-            mainNav.classList.toggle('open');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Burger Menu Logic
+            const menuToggle = document.getElementById('menuToggle');
+            const mainNav = document.getElementById('mainNav');
             
-            const icon = menuToggle.querySelector('i');
-            if (mainNav.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-        
-        // Tutup menu saat link diklik (khusus mobile)
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 992) {
-                    mainNav.classList.remove('open');
-                    
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('open');
+                const icon = menuToggle.querySelector('i');
+                icon.className = mainNav.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
             });
-        });
 
-        // ===================================
-        // B. FUNGSI PORTFOLIO FILTER
-        // ===================================
-        const applyFilter = (filterValue) => {
-            projectCards.forEach(card => {
-                const categories = card.getAttribute('data-category');
-                
-                if (!categories) return;
+            // Portfolio Filter Logic
+            const filterLinks = document.querySelectorAll('.filterable-link');
+            const projectCards = document.querySelectorAll('.project-card');
 
-                if (filterValue === 'all' || categories.includes(filterValue)) {
-                    // Tampilkan
-                    card.style.display = 'block'; 
-                } else {
-                    // Sembunyikan
-                    card.style.display = 'none'; 
-                }
+            const applyFilter = (filterValue) => {
+                projectCards.forEach(card => {
+                    const categories = card.getAttribute('data-category');
+                    if (filterValue === 'all' || (categories && categories.includes(filterValue))) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.classList.remove('fade-out'), 10);
+                    } else {
+                        card.classList.add('fade-out');
+                        setTimeout(() => card.style.display = 'none', 400);
+                    }
+                });
+            };
+
+            filterLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); 
+                    filterLinks.forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+                    applyFilter(this.getAttribute('data-filter'));
+                });
             });
-        };
-
-        filterLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault(); 
-                
-                const filterValue = this.getAttribute('data-filter');
-
-                // Kelola kelas 'active'
-                filterLinks.forEach(nav => nav.classList.remove('active'));
-                this.classList.add('active');
-
-                // Terapkan filter
-                applyFilter(filterValue);
-            });
+            
+            applyFilter('all'); // Inisialisasi
         });
-        
-        // Inisiasi: Panggil filter 'all' saat pertama kali dimuat
-        const initialFilterLink = document.querySelector('.filterable-link[data-filter="all"]');
-        if (initialFilterLink) {
-             // Menggunakan setTimeout 0ms untuk memastikan DOM benar-benar dimuat sebelum klik
-             setTimeout(() => {
-                 initialFilterLink.click();
-             }, 0); 
-        }
-    });
-</script>
+    </script>
 </body>
 </html>
